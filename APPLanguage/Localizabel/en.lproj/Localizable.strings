@@ -1,0 +1,11 @@
+/* 
+  Localizabel.strings
+  APPLanguage
+
+  Created by 王太炬 on 2021/2/20.
+  
+*/
+"chinese" = "Chinese laungage";
+"english" = "english laungage";
+"label" = "English";
+
