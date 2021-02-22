@@ -8,8 +8,8 @@
 import UIKit
 
 let APPUserLanguageKey:String = "CLUserLanguageKey"
-class APPLanguageManager: NSObject {
-    class func setUserLanguage(userLaguage:String){
+public class APPLanguageManager: NSObject {
+    public class func setUserLanguage(userLaguage:String){
         NotificationCenter.default.post(name: NSNotification.Name("AppLanguage"), object: nil, userInfo: ["laungage" : userLaguage])
         if (userLaguage.isEmpty) {
             resetSystemLanguage()
@@ -20,7 +20,7 @@ class APPLanguageManager: NSObject {
         UserDefaults.standard.synchronize()
     }
     
-    class func getUserLanguage()->String{
+    public class func getUserLanguage()->String{
         return (UserDefaults.standard.value(forKey: APPUserLanguageKey) as? String) ?? getAppDefaultLanguage()
     }
     
@@ -29,7 +29,7 @@ class APPLanguageManager: NSObject {
         return Locale.preferredLanguages.first!;
     }
     
-    static func resetSystemLanguage(){
+    public static func resetSystemLanguage(){
         UserDefaults.standard.removeObject(forKey: APPUserLanguageKey)
         UserDefaults.standard.removeObject(forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()

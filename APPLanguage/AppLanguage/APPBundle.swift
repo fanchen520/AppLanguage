@@ -7,13 +7,13 @@
 
 import UIKit
 
-class APPBundle: Bundle {
+public class APPBundle: Bundle {
     //使用需要在AppDelegate的 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions 方法中调用
-    class func resetBundle(){
+    public class func resetBundle(){
         object_setClass(Foundation.Bundle.main, APPBundle.self)
     }
     
-    override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
+    public override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
         if !APPBundle.currentLanguage().isEmpty {
             var path = Bundle.main.path(forResource: APPBundle.currentLanguage(), ofType: "lproj")
             if APPBundle.isChineseLanguage() {
